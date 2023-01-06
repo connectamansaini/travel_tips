@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_tips/src/home/detail_list.dart';
+import 'package:travel_tips/src/home/constants/detail_list.dart';
 import 'package:travel_tips/src/home/views/show_detail_view.dart';
 
 class CustomContainer extends StatelessWidget {
@@ -15,12 +15,12 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1 / 1,
+      aspectRatio: 1.5 / 1,
       child: GestureDetector(
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>  ShowDetailView(index: index),
+            builder: (context) => ShowDetailView(index: index),
           ),
         ),
         child: Container(

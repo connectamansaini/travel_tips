@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_tips/src/home/views/widgets/kcontainer_widget.dart';
 
-import '../../detail_list.dart';
+import '../../constants/detail_list.dart';
 
 class HomeBottomPart extends StatelessWidget {
   const HomeBottomPart({
@@ -14,22 +14,22 @@ class HomeBottomPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            "Best Destination",
+            "  Best Destination",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.grey[800],
                 fontSize: 20),
           ),
           const SizedBox(
-            height: 20,
+            height: 8,
           ),
           SizedBox(
-            height: 200,
+            height: 180,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
@@ -53,20 +53,20 @@ class HomeBottomPart extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 16,
           ),
           Text(
-            "More Tours",
+            "  More Tours",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.grey[800],
                 fontSize: 20),
           ),
           const SizedBox(
-            height: 20,
+            height: 8,
           ),
           SizedBox(
-            height: 200,
+            height: 180,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
@@ -88,9 +88,6 @@ class HomeBottomPart extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 80,
           ),
         ],
       ),

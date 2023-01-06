@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Travel Tips India',
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
+      // theme: ThemeData.dark(
+        // primarySwatch: Colors.blue,
       // ),
       initialRoute: HomeView.id,
       routes: {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_tips/src/home/detail_list.dart';
+import 'package:travel_tips/src/home/constants/detail_list.dart';
 
 class ShowDetailView extends StatefulWidget {
   const ShowDetailView({super.key, required this.index});
