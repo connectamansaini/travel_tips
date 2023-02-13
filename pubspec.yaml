@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.16
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -20,9 +21,8 @@ dev_dependencies:
 
 flutter_icons:
   android: true
-  # ios: true
   image_path: "assets/app_logo.png"
-  # min_sdk_android: 21 # android min sdk min:16, default 21
+  
 
 flutter_native_splash:
   background_image: "assets/background.png"
@@ -30,9 +30,9 @@ flutter_native_splash:
 
   android_12:
     image: assets/splash_screen.png
-    icon_background_color: "#FFFFFF"
+    icon_background_color: "
     image_dark: assets/splash_screen_invert.png
-    icon_background_color_dark: "#000000"
+    icon_background_color_dark: "
 
   web: false
 
@@ -40,12 +40,18 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/category_images/
     - assets/
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+fonts:
+   - family: OpenSans
+     fonts:
+       - asset: assets/fonts/OpenSans-Regular.ttf
+       - asset: assets/fonts/OpenSans-Medium.ttf
+  
+  
+  
+  
+  
+  
 
