@@ -4,13 +4,12 @@ import 'package:travel_tips/src/core/colors.dart';
 import 'package:travel_tips/src/core/theme.dart';
 import 'package:travel_tips/src/home/views/widgets/choice_chip.dart';
 import '../../core/constants.dart';
-import '../../models/tour_model.dart';
+import '../../models/tour.dart';
 import 'widgets/star_rating.dart';
 
 class DetailView extends StatelessWidget {
   const DetailView({super.key, required this.tour});
-  final TourModel tour;
-
+  final Tour tour;
   @override
   Widget build(BuildContext context) {
     return SafeArea(

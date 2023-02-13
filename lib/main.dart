@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'travel_tips.dart';
+import 'app.dart';
 
 void main() {
   runApp(const App());

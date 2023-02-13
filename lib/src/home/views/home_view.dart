@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:travel_tips/src/core/colors.dart';
 import 'package:travel_tips/src/core/constants.dart';
 import 'package:travel_tips/src/core/theme.dart';
-import '../../models/tour_model.dart';
+import '../../models/tour.dart';
 import 'detail_view.dart';
 import 'widgets/category_button.dart';
 import 'widgets/choice_chip.dart';
@@ -19,43 +18,74 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final List<String> _choices = ['All', 'Asia', 'Europe', 'America', 'Oceania'];
 
-  // final bool _isSelected = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
-      body: buildBody(context),
-    );
-  }
-
-  SingleChildScrollView buildBody(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
+      appBar: AppBar(
+        title: const Text(
+          'Travel Tips',
+        ),
+        actions: [
+          IconButton(
+            // color: Colors.black,
+            onPressed: () {},
+            icon: const Icon(
+              Icons.notifications,
+            ),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
         padding:
             const EdgeInsets.symmetric(horizontal: Constants.defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HeadLine(),
+            Text(
+              'Where do you \nwant to explore today?',
+              style: Theme.of(context).extraLargeTitlePrimaryTextStyle.copyWith(
+                    fontWeight: FontWeight.w500,
+                    height: 1.4,
+                  ),
+            ),
             Constants.sizedBox20Height,
             const SearchBar(),
             Constants.sizedBox20Height,
-            const Title(title: 'Exclusive Package'),
+            Text(
+              'Exclusive Package',
+              style: Theme.of(context)
+                  .smallTitlePrimaryTextStyle
+                  .copyWith(fontWeight: FontWeight.w500),
+            ),
             Constants.sizedBox10Height,
             KChoiceChips(item: _choices),
             Constants.sizedBox10Height,
             TourCardRow(height: 40.h, width: 70.w, flag: true),
             Constants.sizedBox20Height,
-            const Title(title: 'Explore Category'),
+            Text(
+              'Explore Category',
+              style: Theme.of(context)
+                  .smallTitlePrimaryTextStyle
+                  .copyWith(fontWeight: FontWeight.w500),
+            ),
             Constants.sizedBox20Height,
             const CategoryCardRow(),
             Constants.sizedBox20Height,
-            const Title(title: 'Recommended Package'),
+            Text(
+              'Recommended Package',
+              style: Theme.of(context)
+                  .smallTitlePrimaryTextStyle
+                  .copyWith(fontWeight: FontWeight.w500),
+            ),
             Constants.sizedBox20Height,
             TourCardRow(height: 30.h, width: 45.w, flag: false),
             Constants.sizedBox20Height,
-            const Title(title: 'Know Your World'),
+            Text(
+              'Know Your World',
+              style: Theme.of(context)
+                  .smallTitlePrimaryTextStyle
+                  .copyWith(fontWeight: FontWeight.w500),
+            ),
             Text('Grow your world knowledge',
                 style: Theme.of(context).extraSmallTitleTertiaryTextStyle),
             Constants.sizedBox20Height,
@@ -64,23 +94,6 @@ class _HomeViewState extends State<HomeView> {
           ],
         ),
       ),
-    );
-  }
-
-  AppBar buildAppBar() {
-    return AppBar(
-      title: const Text(
-        'Travel Tips',
-      ),
-      actions: [
-        IconButton(
-          // color: Colors.black,
-          onPressed: () {},
-          icon: const Icon(
-            Icons.notifications,
-          ),
-        ),
-      ],
     );
   }
 }
@@ -227,24 +240,6 @@ class TourCardRow extends StatelessWidget {
   }
 }
 
-class Title extends StatelessWidget {
-  const Title({
-    super.key,
-    required this.title,
-  });
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: Theme.of(context)
-          .smallTitlePrimaryTextStyle
-          .copyWith(fontWeight: FontWeight.w500),
-    );
-  }
-}
-
 class SearchBar extends StatelessWidget {
   const SearchBar({
     super.key,
@@ -267,23 +262,6 @@ class SearchBar extends StatelessWidget {
         fillColor: const Color.fromARGB(10, 0, 0, 0),
         filled: true,
       ),
-    );
-  }
-}
-
-class HeadLine extends StatelessWidget {
-  const HeadLine({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'Where do you \nwant to explore today?',
-      style: Theme.of(context).extraLargeTitlePrimaryTextStyle.copyWith(
-            fontWeight: FontWeight.w500,
-            height: 1.4,
-          ),
     );
   }
 }

@@ -1,9 +1,9 @@
-class TourModel {
+class Tour {
   final String image, title, tripPlan, location;
   final int price, id;
   final double rating;
   final List<String> imageList;
-  TourModel({
+  Tour({
     required this.imageList,
     required this.id,
     required this.title,
@@ -15,8 +15,8 @@ class TourModel {
   });
 }
 
-List<TourModel> tours = [
-  TourModel(
+List<Tour> tours = [
+  Tour(
     id: 1,
     title: "Kashmir",
     price: 20000,
@@ -32,7 +32,7 @@ List<TourModel> tours = [
     location: 'Kashmir',
     rating: 4,
   ),
-  TourModel(
+  Tour(
     id: 2,
     title: "Mumbai",
     price: 20000,
@@ -47,7 +47,7 @@ List<TourModel> tours = [
     location: 'Mumbai',
     rating: 4,
   ),
-  TourModel(
+  Tour(
     id: 3,
     title: "New Delhi",
     price: 20000,
@@ -62,7 +62,7 @@ List<TourModel> tours = [
     location: 'New Delhi',
     rating: 4,
   ),
-  TourModel(
+  Tour(
     id: 4,
     title: "Pushkar",
     price: 20000,
@@ -77,7 +77,7 @@ List<TourModel> tours = [
     location: 'Pushkar',
     rating: 4,
   ),
-  TourModel(
+  Tour(
     id: 5,
     title: "Rajasthan",
     price: 20000,
@@ -92,7 +92,7 @@ List<TourModel> tours = [
     location: 'Rajasthan',
     rating: 4,
   ),
-  TourModel(
+  Tour(
     id: 6,
     title: "North East India",
     price: 20000,
@@ -107,7 +107,7 @@ List<TourModel> tours = [
     location: 'North East India',
     rating: 4,
   ),
-  TourModel(
+  Tour(
     id: 7,
     title: "Uttarakhand",
     price: 20000,
@@ -122,7 +122,7 @@ List<TourModel> tours = [
     location: 'Uttarakhand',
     rating: 4,
   ),
-  TourModel(
+  Tour(
     id: 8,
     title: "South India",
     price: 20000,

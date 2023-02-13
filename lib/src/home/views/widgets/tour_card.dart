@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:travel_tips/src/core/colors.dart';
 import 'package:travel_tips/src/core/theme.dart';
-import 'package:travel_tips/src/models/tour_model.dart';
+import 'package:travel_tips/src/models/tour.dart';
 
 import '../../../core/constants.dart';
 import 'star_rating.dart';
 
 class TourCard extends StatelessWidget {
-  final TourModel tour;
+  final Tour tour;
   final double width, height;
   final bool flag;
 
