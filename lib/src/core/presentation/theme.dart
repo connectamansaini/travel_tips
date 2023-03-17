@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_tips/src/core/domain/constants.dart';
 import 'package:travel_tips/src/core/presentation/colors.dart';
+import 'package:travel_tips/src/core/presentation/constants.dart';
 import 'package:travel_tips/src/core/presentation/topography.dart';
 
 class AppThemes {
@@ -33,6 +33,7 @@ class AppThemes {
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: AppColors.floatingActionButtonLightColor,
+      foregroundColor: Colors.white,
     ),
     iconTheme: const IconThemeData(color: Colors.black),
   );

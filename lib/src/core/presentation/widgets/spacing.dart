@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_tips/src/core/presentation/constants.dart';
 
-enum SpacingSize { base, tiny, small, regular, medium, large, xL }
+enum SpacingSize { base, tiny, small, regular, medium, large, xL, xxL }
 
 double mapSpacingSizeToSize(SpacingSize size) {
   switch (size) {
@@ -19,6 +19,8 @@ double mapSpacingSizeToSize(SpacingSize size) {
       return Constants.largeMargin;
     case SpacingSize.xL:
       return Constants.xLMargin;
+    case SpacingSize.xxL:
+      return Constants.xxLMargin;
   }
 }
 

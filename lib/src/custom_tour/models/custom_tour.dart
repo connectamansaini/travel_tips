@@ -2,22 +2,23 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'package:travel_tips/src/core/domain/enums.dart';
 
-part 'plan_tour.g.dart';
+part 'custom_tour.g.dart';
 
 @JsonSerializable()
-class PlanTour {
-  const PlanTour({
+class CustomTour {
+  const CustomTour({
     this.id = '',
     this.name = '',
     this.destination = '',
-    this.exploreDestination = false,
+    this.isExploreDestination = false,
     this.baseLocation = '',
     this.departureDate,
-    this.days = 0,
-    this.flight = false,
-    this.cab = false,
-    this.hotelCategory = HotelCategory.star3,
+    this.days = 1,
+    this.isFlightSelected = false,
+    this.isCabSelected = false,
+    this.hotelCategories = const [],
     this.budgetPerPerson = 0,
+    // TODO(ask): How to make this 3 variable one? Should I use Map?
     this.adult = 2,
     this.children = 0,
     this.infant = 0,
@@ -25,20 +26,20 @@ class PlanTour {
     this.phoneNo = 0,
   });
 
-  factory PlanTour.fromJson(Map<String, dynamic> json) =>
-      _$PlanTourFromJson(json);
-  Map<String, dynamic> toJson() => _$PlanTourToJson(this);
+  factory CustomTour.fromJson(Map<String, dynamic> json) =>
+      _$CustomTourFromJson(json);
+  Map<String, dynamic> toJson() => _$CustomTourToJson(this);
 
   final String id;
   final String name;
   final String destination;
-  final bool exploreDestination;
+  final bool isExploreDestination;
   final String baseLocation;
   final DateTime? departureDate;
   final int days;
-  final bool flight;
-  final bool cab;
-  final HotelCategory hotelCategory;
+  final bool isFlightSelected;
+  final bool isCabSelected;
+  final List<Rating> hotelCategories;
   final int budgetPerPerson;
   final int adult;
   final int children;
@@ -46,19 +47,19 @@ class PlanTour {
   final String emailId;
   final int phoneNo;
 
-  static const empty = PlanTour();
+  static const empty = CustomTour();
 
-  PlanTour copyWith({
+  CustomTour copyWith({
     String? id,
     String? name,
     String? destination,
-    bool? exploreDestination,
+    bool? isExploreDestination,
     String? baseLocation,
     DateTime? departureDate,
     int? days,
-    bool? flight,
-    bool? cab,
-    HotelCategory? hotelCategory,
+    bool? isFlightSelected,
+    bool? isCabSelected,
+    List<Rating>? hotelCategories,
     int? budgetPerPerson,
     int? adult,
     int? children,
@@ -66,17 +67,17 @@ class PlanTour {
     String? emailId,
     int? phoneNo,
   }) {
-    return PlanTour(
+    return CustomTour(
       id: id ?? this.id,
       name: name ?? this.name,
       destination: destination ?? this.destination,
-      exploreDestination: exploreDestination ?? this.exploreDestination,
+      isExploreDestination: isExploreDestination ?? this.isExploreDestination,
       baseLocation: baseLocation ?? this.baseLocation,
       departureDate: departureDate ?? this.departureDate,
       days: days ?? this.days,
-      flight: flight ?? this.flight,
-      cab: cab ?? this.cab,
-      hotelCategory: hotelCategory ?? this.hotelCategory,
+      isFlightSelected: isFlightSelected ?? this.isFlightSelected,
+      isCabSelected: isCabSelected ?? this.isCabSelected,
+      hotelCategories: hotelCategories ?? this.hotelCategories,
       budgetPerPerson: budgetPerPerson ?? this.budgetPerPerson,
       adult: adult ?? this.adult,
       children: children ?? this.children,
