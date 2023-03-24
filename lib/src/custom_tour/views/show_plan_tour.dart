@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_tips/src/core/presentation/widgets/spacing.dart';
 import 'package:travel_tips/src/custom_tour/bloc/custom_tour_bloc.dart';
 import 'package:travel_tips/src/custom_tour/views/widget/navigation_button_widget.dart';
-import 'package:travel_tips/src/home/views/home_view.dart';
 
 class ShowPlanTour extends StatelessWidget {
   const ShowPlanTour({super.key});
@@ -62,13 +61,13 @@ class ShowPlanTour extends StatelessWidget {
                 NavigationButtons(
                   onPressedOnNext: () {
                     context.read<CustomTourBloc>().add(TourUploaded());
-                    // TODO(ask): Why this is not replacing?
-                    Navigator.pushReplacement<void, void>(
-                      context,
-                      MaterialPageRoute<void>(
-                        builder: (context) => const HomeView(),
-                      ),
-                    );
+                    Navigator.of(context).popUntil((route) => route.isFirst);
+                    // Navigator.pushReplacement<void, void>(
+                    //   context,
+                    //   MaterialPageRoute<void>(
+                    //     builder: (context) => const HomeView(),
+                    //   ),
+                    // );
                   },
                 ),
               ],

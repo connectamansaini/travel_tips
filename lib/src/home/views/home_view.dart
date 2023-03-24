@@ -73,7 +73,6 @@ class HomeViewSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // TODO(ask): Is this good practice to give height and width at line 97.
       height: 70.h,
       child: ListView.builder(
         itemCount: tours.length,

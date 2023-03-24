@@ -18,7 +18,6 @@ class CustomTour {
     this.isCabSelected = false,
     this.hotelCategories = const [],
     this.budgetPerPerson = 0,
-    // TODO(ask): How to make this 3 variable one? Should I use Map?
     this.adult = 2,
     this.children = 0,
     this.infant = 0,

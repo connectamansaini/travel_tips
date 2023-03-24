@@ -19,7 +19,6 @@ class DetailTourView extends StatefulWidget {
 }
 
 class _DetailTourViewState extends State<DetailTourView> {
-  // TODO(ask): how to change logic of this index?
   int _index = 0;
 
   @override

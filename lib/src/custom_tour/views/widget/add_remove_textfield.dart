@@ -14,11 +14,12 @@ class AddRemoveTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(ask): How to change color of outline border?
     return TextField(
       readOnly: true,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
+        enabledBorder: const OutlineInputBorder(),
+        focusedBorder: const OutlineInputBorder(),
         hintText: hintText,
         suffixIcon: IconButton(
           icon: const Icon(

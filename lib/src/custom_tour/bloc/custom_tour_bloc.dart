@@ -160,21 +160,20 @@ class CustomTourBloc extends Bloc<CustomTourEvent, CustomTourState> {
     AdultChanged event,
     Emitter<CustomTourState> emit,
   ) {
-    // TODO(ask): Is this logic Idea good?
-    if (!event.isIncremented) {
-      if (state.customTour.adult > 1) {
-        emit(
-          state.copyWith(
-            customTour:
-                state.customTour.copyWith(adult: state.customTour.adult - 1),
-          ),
-        );
-      }
-    } else {
-      emit(
+    if (event.isIncremented) {
+      return emit(
         state.copyWith(
           customTour:
               state.customTour.copyWith(adult: state.customTour.adult + 1),
+        ),
+      );
+    }
+
+    if (state.customTour.adult > 1) {
+      emit(
+        state.copyWith(
+          customTour:
+              state.customTour.copyWith(adult: state.customTour.adult - 1),
         ),
       );
     }
